@@ -45,12 +45,12 @@ export const Form = () => {
               {...register("firstName")}
               className={cn(
                 errors.firstName
-                  ? "border-[#C90D0D]"
-                  : watched.firstName && "border-[#329F32]"
+                  ? "border-error-message"
+                  : watched.firstName && "border-filled-input"
               )}
             />
             {errors.firstName && (
-              <p className="text-sm text-[#C90D0D]">
+              <p className="text-sm text-error-message">
                 {errors.firstName.message}
               </p>
             )}
@@ -62,12 +62,12 @@ export const Form = () => {
               {...register("lastName")}
               className={cn(
                 errors.lastName
-                  ? "border-[#C90D0D]"
-                  : watched.lastName && "border-[#329F32]"
+                  ? "border-error-message"
+                  : watched.lastName && "border-filled-input"
               )}
             />
             {errors.lastName && (
-              <p className="text-sm text-[#C90D0D]">
+              <p className="text-sm text-error-message">
                 {errors.lastName.message}
               </p>
             )}
@@ -79,12 +79,14 @@ export const Form = () => {
               {...register("email")}
               className={cn(
                 errors.email
-                  ? "border-[#C90D0D]"
-                  : watched.email && "border-[#329F32]"
+                  ? "border-error-message"
+                  : watched.email && "border-filled-input"
               )}
             />
             {errors.email && (
-              <p className="text-sm text-[#C90D0D]">{errors.email.message}</p>
+              <p className="text-sm text-error-message">
+                {errors.email.message}
+              </p>
             )}
           </div>
 
@@ -94,12 +96,14 @@ export const Form = () => {
               {...register("phone")}
               className={cn(
                 errors.phone
-                  ? "border-[#C90D0D]"
-                  : watched.phone && "border-[#329F32]"
+                  ? "border-error-message"
+                  : watched.phone && "border-filled-input"
               )}
             />
             {errors.phone && (
-              <p className="text-sm text-[#C90D0D]">{errors.phone.message}</p>
+              <p className="text-sm text-error-message">
+                {errors.phone.message}
+              </p>
             )}
           </div>
 
@@ -109,13 +113,15 @@ export const Form = () => {
               className={cn(
                 "h-[200px]",
                 errors.message
-                  ? "border-[#C90D0D]"
-                  : watched.message && "border-[#329F32]"
+                  ? "border-error-message"
+                  : watched.message && "border-filled-input"
               )}
               {...register("message")}
             />
             {errors.message && (
-              <p className="text-sm text-[#C90D0D]">{errors.message.message}</p>
+              <p className="text-sm text-error-message">
+                {errors.message.message}
+              </p>
             )}
           </div>
 
@@ -131,23 +137,20 @@ export const Form = () => {
                   onCheckedChange={field.onChange}
                   className={cn(
                     errors.terms
-                      ? "border-[#C90D0D]"
-                      : field.value && "border-[#329F32]"
+                      ? "border-error-message"
+                      : field.value && "border-filled-input"
                   )}
                 />
               )}
             />
-            <label
-              htmlFor="terms"
-              className="text-sm font-inter text-gray-dark"
-            >
+            <label className="text-sm font-inter text-gray-dark">
               Zapoznałem się z regulaminem i wyrażam zgodę na przetwarzanie
               moich danych osobowych przez Sungroup.pl
             </label>
           </div>
 
           {errors.terms && (
-            <p className="text-sm text-[#C90D0D] md:col-span-2">
+            <p className="text-sm text-error-message md:col-span-2">
               {errors.terms.message}
             </p>
           )}

@@ -50,6 +50,8 @@
   --color-gray: #696c74;
   --color-gray-dark: #242529;
   --color-gray-light: #f9f9fa;
+  --color-error-message: #c90d0d;
+  --color-filled-input: #329f32;
   --padding-x-axis-layout: 280px;
   --padding-y-axis-layout: 128px;
 }
