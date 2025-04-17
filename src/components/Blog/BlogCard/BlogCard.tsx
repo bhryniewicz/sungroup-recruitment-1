@@ -1,6 +1,7 @@
 import { Calendar1Icon } from "lucide-react";
 import Image from "next/image";
 import { BlogPostImage } from "@/assets/images";
+import { Subtitle } from "@/components/ui/subtitle";
 
 export const BlogCard = () => {
   return (
@@ -14,9 +15,7 @@ export const BlogCard = () => {
         />
       </div>
       <div className="flex flex-col gap-3">
-        <p className="text-sm text-primary-dark tracking-wider font-medium">
-          Kategoria
-        </p>
+        <Subtitle>Kategoria</Subtitle>
         <h2 className="text-md text-gray-dark font-medium leading-7">
           Intrygujący tytuł artykułu do przeczytania przez użytkownika
         </h2>

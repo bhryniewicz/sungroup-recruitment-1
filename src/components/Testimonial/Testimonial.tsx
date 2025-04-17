@@ -1,16 +1,14 @@
 import Image from "next/image";
 import { JanKowalskiImage } from "@/assets/images";
 import { QuoteIcon } from "@/assets/icons";
+import { Title } from "../ui/title";
+import { Subtitle } from "../ui/subtitle";
 
 export const Testimonial = () => {
   return (
     <section className="flex flex-col gap-8 justify-center items-center py-8 md:py-y-axis-layout">
-      <h2 className="text-sm text-primary-dark tracking-wider font-medium">
-        Referencje
-      </h2>
-      <h1 className="text-gray-dark text-center font-semibold text-3xl">
-        Poznaj opinie naszych klientow
-      </h1>
+      <Subtitle>Referencje</Subtitle>
+      <Title>Poznaj opinie naszych klientow</Title>
       <Image src={QuoteIcon} alt="quote icon" width={30} height={20} />
       <p className="text-center text-gray-dark">
         But I must explain to you how all this mistaken idea of denouncing

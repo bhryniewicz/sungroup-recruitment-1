@@ -13,7 +13,7 @@ export const ServiceCard = ({
   return (
     <div
       className={cn(
-        "flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-[200px] h-auto md:h-[550px]",
+        "flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-[180px] h-auto md:h-[550px]",
         isReversed && "md:[&>*:first-child]:order-2"
       )}
     >
