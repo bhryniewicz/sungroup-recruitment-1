@@ -12,14 +12,16 @@ export const HomeScreen = () => {
     <main>
       <Hero />
       <Info />
-      <div className="flex flex-col px-8 md:px-x-axis-layout bg-white">
+      <div className="flex flex-col layout-x-padding bg-white max-w-[1920px] mx-auto">
         <Services />
         <div className="w-full h-[1px] bg-[#dee1e6]" />
         <Testimonial />
       </div>
-      <div className="flex flex-col px-8 md:px-x-axis-layout bg-gray-light">
-        <Blog />
-        <CTASection />
+      <div className="bg-gray-light">
+        <div className="flex flex-col layout-x-padding max-w-[1920px] mx-auto">
+          <Blog />
+          <CTASection />
+        </div>
       </div>
       <Form />
       <Footer />

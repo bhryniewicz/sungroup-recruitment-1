@@ -13,14 +13,13 @@ export const ServiceCard = ({
   return (
     <div
       className={cn(
-        "flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-[180px] h-auto md:h-[550px]",
-        isReversed && "md:[&>*:first-child]:order-2"
+        "grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-[100px] xl:gap-[180px] 2xl:gap-[264px] h-auto lg:h-[550px]"
       )}
     >
       <div
         className={cn(
           "flex flex-col items-start justify-center gap-6",
-          isReversed && "md:order-2"
+          isReversed && "lg:order-2"
         )}
       >
         <Subtitle>Overline</Subtitle>
@@ -34,8 +33,12 @@ export const ServiceCard = ({
         </p>
         <Button className="w-full md:w-auto">Skontaktuj się z nami</Button>
       </div>
-
-      <div className="relative w-full h-[300px] md:h-full">
+      <div
+        className={cn(
+          "relative w-full h-[300px] md:h-[400px] lg:h-full",
+          isReversed && "lg:order-1"
+        )}
+      >
         <Image
           src={ServiceImage}
           alt="service image"

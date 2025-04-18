@@ -14,21 +14,24 @@ export const Navbar = () => {
   };
 
   return (
-    <header className="w-full flex justify-between items-center px-8 md:px-x-axis-layout py-3 md:py-6 h-[10vh] relative z-50">
-      <Title size={"sm"}>SunPage</Title>
-      <nav className="hidden md:flex items-center gap-12 text-gray">
-        <ul className="flex gap-12">
-          <ListItem>O nas</ListItem>
-          <ListItem>Blog</ListItem>
-          <ListItem>Kontakt</ListItem>
-        </ul>
-        <Button>Porozmawiajmy</Button>
-      </nav>
-      <div className="md:hidden">
-        <button onClick={handleToggleMenu}>
-          <Menu size={28} />
-        </button>
+    <header className="flex items-center w-full h-[60px] md:h-[100px] relative z-50 bg-white">
+      <div className="w-full max-w-[1920px] mx-auto layout-x-padding flex justify-between items-center">
+        <Title size={"sm"}>SunPage</Title>
+        <nav className="hidden md:flex items-center gap-12 text-gray">
+          <ul className="flex gap-12">
+            <ListItem>O nas</ListItem>
+            <ListItem>Blog</ListItem>
+            <ListItem>Kontakt</ListItem>
+          </ul>
+          <Button>Porozmawiajmy</Button>
+        </nav>
+        <div className="md:hidden">
+          <button onClick={handleToggleMenu}>
+            <Menu size={28} />
+          </button>
+        </div>
       </div>
+
       {isOpen && (
         <nav className="fixed inset-0 bg-white flex flex-col items-center justify-center gap-12 text-xl font-medium z-40">
           <div className="absolute top-8 right-8">

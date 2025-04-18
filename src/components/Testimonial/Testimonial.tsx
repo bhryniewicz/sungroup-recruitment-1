@@ -8,9 +8,9 @@ export const Testimonial = () => {
   return (
     <section className="flex flex-col gap-8 justify-center items-center py-8 md:py-y-axis-layout">
       <Subtitle>Referencje</Subtitle>
-      <Title>Poznaj opinie naszych klientow</Title>
+      <Title className="text-center">Poznaj opinie naszych klientow</Title>
       <Image src={QuoteIcon} alt="quote icon" width={30} height={20} />
-      <p className="text-center text-gray-dark">
+      <p className="text-center px-0 md:px-16 lg:px-24 text-gray-dark xl:px-48">
         But I must explain to you how all this mistaken idea of denouncing
         pleasure and praising pain was born and I will give you a complete
         account of the system. But I must explain to you how all this mistaken

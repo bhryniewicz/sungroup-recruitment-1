@@ -19,7 +19,7 @@ export const BlogCard = () => {
         <h2 className="text-md text-gray-dark font-medium leading-7">
           Intrygujący tytuł artykułu do przeczytania przez użytkownika
         </h2>
-        <p className="text-gray leading-7 font-inter text-sm">
+        <p className="text-gray leading-7 font-inter text-sm line-clamp-2">
           But I must explain to you how all this mistaken idea of denouncing
           pleasure and praising pain.
         </p>

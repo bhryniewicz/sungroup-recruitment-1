@@ -133,3 +133,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .layout-x-padding {
+    @apply px-8 md:px-16 xl:px-[150px] 2xl:px-x-axis-layout;
+  }
+}
