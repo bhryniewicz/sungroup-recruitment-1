@@ -37,7 +37,6 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       }
     };
 
-    console.log(watch(name));
     return (
       <div className="relative w-full">
         <input
