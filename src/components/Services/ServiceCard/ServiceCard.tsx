@@ -13,7 +13,7 @@ export const ServiceCard = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-[100px] xl:gap-[180px] 2xl:gap-[264px] h-auto lg:h-[550px]"
+        "grid grid-cols-1 items-center lg:grid-cols-2 gap-8 md:gap-10 lg:gap-[100px] xl:gap-[180px] 2xl:gap-[264px] h-auto lg:h-[550px]"
       )}
     >
       <div
@@ -35,7 +35,7 @@ export const ServiceCard = ({
       </div>
       <div
         className={cn(
-          "relative w-full h-[300px] md:h-[400px] lg:h-full",
+          "relative w-full aspect-[1/1] max-h-[500px]",
           isReversed && "lg:order-1"
         )}
       >
@@ -43,7 +43,7 @@ export const ServiceCard = ({
           src={ServiceImage}
           alt="service image"
           fill
-          className="object-cover rounded-md"
+          className="object-cover rounded-lg"
         />
       </div>
     </div>

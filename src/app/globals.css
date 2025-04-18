@@ -43,10 +43,11 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --color-primary: #6e9eff;
-  --color-primary-hover: #3e38b8;
-  --color-primary-pressed: #312e91;
+  --color-primary-hover: #5086f2;
+  --color-primary-pressed: #3f69bf;
   --color-primary-dark: #3f69bf;
   --color-primary-light: #f7f9ff;
+  --color-secondary: #6E9EFF;
   --color-gray: #696c74;
   --color-gray-dark: #242529;
   --color-gray-light: #f9f9fa;

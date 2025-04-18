@@ -4,7 +4,7 @@ import { Title } from "../ui/title";
 
 export const CTASection = () => {
   return (
-    <section className="flex justify-center px-8 py-20 text-white bg-gray-dark rounded-md mb-8 md:mb-[128px]">
+    <section className="flex justify-center px-8 py-20 text-white bg-gray-dark rounded-lg mb-8 md:mb-[128px]">
       <div className="flex flex-col justify-center items-center gap-6 max-w-[555px]">
         <Subtitle variant={"secondary"}>Overline</Subtitle>
         <Title className="text-center" variant={"secondary"}>
