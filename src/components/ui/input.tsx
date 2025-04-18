@@ -54,7 +54,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             "focus-visible:ring-ring/50 focus-visible:border-primary",
             "hover:border-gray/40",
             hasError && "border-error-message",
-            hasContent && "border-filled-input", // ✅ jeśli ma wartość → inny border
+            hasContent && "border-filled-input",
             "peer-focus:border-primary",
             className
           )}
