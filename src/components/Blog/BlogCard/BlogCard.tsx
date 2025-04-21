@@ -6,7 +6,7 @@ import { Subtitle } from "@/components/ui/subtitle";
 export const BlogCard = () => {
   return (
     <article className="flex flex-col gap-8">
-      <div className="relative w-full h-[280px] md:h-[320px] rounded-lg overflow-hidden">
+      <div className="relative w-full aspect-[1.3/1] rounded-lg overflow-hidden">
         <Image
           src={BlogPostImage}
           alt="blog post image"
@@ -14,7 +14,7 @@ export const BlogCard = () => {
           className="object-cover"
         />
       </div>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-4">
         <Subtitle>Kategoria</Subtitle>
         <h2 className="text-md text-gray-dark font-medium leading-7">
           Intrygujący tytuł artykułu do przeczytania przez użytkownika

@@ -9,7 +9,7 @@ export const ListItem = ({
 }) => {
   return (
     <li
-      className="text-gray hover:text-[#5086F2] cursor-pointer"
+      className="text-gray hover:text-[#5086F2] cursor-pointer text-sm"
       onClick={onClick}
     >
       {children}

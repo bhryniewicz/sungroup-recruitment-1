@@ -35,7 +35,7 @@ export const ServiceCard = ({
       </div>
       <div
         className={cn(
-          "relative w-full aspect-[1/1] max-h-[500px]",
+          "relative w-full aspect-[1/1] ",
           isReversed && "lg:order-1"
         )}
       >

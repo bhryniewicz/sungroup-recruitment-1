@@ -1,15 +1,14 @@
 "use client";
 
-import { useForm, Controller, FormProvider } from "react-hook-form";
+import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
-import { Input } from "../ui/input";
-import { Textarea } from "../ui/textarea";
-import { Checkbox } from "../ui/checkbox";
 import { Title } from "../ui/title";
-import { FormData, formSchema } from "./schema";
+import { formSchema, FormData } from "./schema";
+import { FormInput } from "./FormInput";
+import { FormCheckbox } from "./FormCheckbox";
+import { FormTextarea } from "./FormTextarea";
 
 export const Form = () => {
   const methods = useForm<FormData>({
@@ -31,7 +30,7 @@ export const Form = () => {
   } = methods;
 
   const onSubmit = (data: FormData) => {
-    console.log("✅ Submitted data:", data);
+    console.log("Submitted data:", data);
   };
 
   return (
@@ -41,168 +40,58 @@ export const Form = () => {
           <Title size="md" className="pb-8">
             Napisz do nas
           </Title>
+
           <FormProvider {...methods}>
             <form
               onSubmit={handleSubmit(onSubmit)}
               className="grid grid-cols-1 md:grid-cols-2 gap-5"
             >
-              <div className="flex flex-col gap-2">
-                <Controller
-                  name="firstName"
-                  control={control}
-                  render={({ field }) => (
-                    <Input
-                      label="Imię"
-                      {...field}
-                      hasError={!!errors.firstName}
-                      className={cn(
-                        errors.firstName
-                          ? "border-error-message"
-                          : field.value && "border-filled-input"
-                      )}
-                    />
-                  )}
-                />
-                {errors.firstName && (
-                  <p className="text-sm text-error-message">
-                    {errors.firstName.message}
-                  </p>
-                )}
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <Controller
-                  name="lastName"
-                  control={control}
-                  render={({ field }) => (
-                    <Input
-                      label="Nazwisko"
-                      {...field}
-                      hasError={!!errors.lastName}
-                      className={cn(
-                        errors.lastName
-                          ? "border-error-message"
-                          : field.value && "border-filled-input"
-                      )}
-                    />
-                  )}
-                />
-                {errors.lastName && (
-                  <p className="text-sm text-error-message">
-                    {errors.lastName.message}
-                  </p>
-                )}
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <Controller
-                  name="email"
-                  control={control}
-                  render={({ field }) => (
-                    <Input
-                      label="Adres e-mail"
-                      {...field}
-                      hasError={!!errors.email}
-                      className={cn(
-                        errors.email
-                          ? "border-error-message"
-                          : field.value && "border-filled-input"
-                      )}
-                    />
-                  )}
-                />
-                {errors.email && (
-                  <p className="text-sm text-error-message">
-                    {errors.email.message}
-                  </p>
-                )}
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <Controller
-                  name="phone"
-                  control={control}
-                  render={({ field }) => (
-                    <Input
-                      label="Numer telefonu"
-                      {...field}
-                      hasError={!!errors.phone}
-                      className={cn(
-                        errors.phone
-                          ? "border-error-message"
-                          : field.value && "border-filled-input"
-                      )}
-                    />
-                  )}
-                />
-                {errors.phone && (
-                  <p className="text-sm text-error-message">
-                    {errors.phone.message}
-                  </p>
-                )}
-              </div>
+              <FormInput
+                name="firstName"
+                label="Imię"
+                control={control}
+                errors={errors}
+              />
+              <FormInput
+                name="lastName"
+                label="Nazwisko"
+                control={control}
+                errors={errors}
+              />
+              <FormInput
+                name="email"
+                label="Adres e-mail"
+                control={control}
+                errors={errors}
+              />
+              <FormInput
+                name="phone"
+                label="Numer telefonu"
+                control={control}
+                errors={errors}
+                type="number"
+              />
 
               <div className="flex flex-col gap-2 md:col-span-2">
-                <Controller
+                <FormTextarea
                   name="message"
+                  label="Twoja wiadomość"
                   control={control}
-                  render={({ field }) => (
-                    <Textarea
-                      label="Twoja wiadomość"
-                      className={cn(
-                        "h-[200px]",
-                        errors.message
-                          ? "border-error-message"
-                          : field.value && "border-filled-input"
-                      )}
-                      {...field}
-                    />
-                  )}
+                  errors={errors}
                 />
-                {errors.message && (
-                  <p className="text-sm text-error-message">
-                    {errors.message.message}
-                  </p>
-                )}
               </div>
 
-              <div className="flex items-start gap-2 md:col-span-2">
-                <Controller
-                  name="terms"
-                  control={control}
-                  defaultValue={false}
-                  render={({ field }) => (
-                    <Checkbox
-                      id="terms"
-                      checked={field.value}
-                      onCheckedChange={field.onChange}
-                      className={cn(
-                        errors.terms
-                          ? "border-error-message"
-                          : field.value && "border-filled-input"
-                      )}
-                    />
-                  )}
-                />
-                <label
-                  htmlFor="terms"
-                  className="text-sm font-inter text-gray-dark"
-                >
-                  Zapoznałem się z regulaminem i wyrażam zgodę na przetwarzanie
-                  moich danych osobowych przez Sungroup.pl
-                </label>
-              </div>
-
-              {errors.terms && (
-                <p className="text-sm text-error-message md:col-span-2">
-                  {errors.terms.message}
-                </p>
-              )}
+              <FormCheckbox
+                name="terms"
+                control={control}
+                errors={errors}
+                label="Zapoznałem się z regulaminem i wyrażam zgodę na przetwarzanie moich danych osobowych przez Sungroup.pl"
+              />
 
               <Button
                 type="submit"
                 size="sm"
-                className="w-full md:col-start-2 md:col-end-3 mt-3"
+                className="w-full md:col-start-2 md:col-end-3 mt-3 md:max-w-[210px] md:ml-auto"
               >
                 Wyślij wiadomość
               </Button>
@@ -210,7 +99,7 @@ export const Form = () => {
           </FormProvider>
         </div>
 
-        <div className="hidden lg:flex h-[300px] md:h-auto bg-[url('/FormImage.png')] bg-center bg-cover rounded-lg" />
+        <div className="hidden lg:flex lg:h-auto bg-[url('/FormImage.png')] bg-center bg-cover rounded-lg" />
       </div>
     </section>
   );
